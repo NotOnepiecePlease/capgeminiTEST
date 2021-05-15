@@ -31,7 +31,7 @@ public class capgeminiDESAFIO_2 {
 	public static double[] qntMaximaClicks = new double[999];
 	public static double[] qntMaximaShares = new double[999];
 
-	public static int indiceAnuncios = 2;
+	public static int indiceAnuncios = 0;
 	public static String[] nomeAnuncio = new String[999];
 	public static String[] nomeCliente = new String[999];
 	public static int[] diaInicio = new int[999];
@@ -46,27 +46,25 @@ public class capgeminiDESAFIO_2 {
 		Scanner relatorio = new Scanner(System.in);
 		Scanner nome = new Scanner(System.in);
 
-		nomeAnuncio[0] = "Anuncio 01";
-		nomeAnuncio[1] = "Anuncio 02";
+//		nomeAnuncio[0] = "Anuncio 01";
+//		nomeAnuncio[1] = "Anuncio 02";
+//
+//		nomeCliente[0] = "Adriano Andrade";
+//		nomeCliente[1] = "Rafael Silva";
+//
+//		dataAnuncio[0] = Calendar.getInstance();
+//		dataAnuncio[1] = Calendar.getInstance();
+//		diaInicio[0] = 26;
+//		mesInicio[0] = 8;
+//		anoInicio[0] = 1996;
+//
+//		diaInicio[1] = 1;
+//		mesInicio[1] = 2;
+//		anoInicio[1] = 1998;
+//
+//		investDia[0] = 200;
+//		investDia[1] = 400;
 
-		nomeCliente[0] = "Adriano Andrade";
-		nomeCliente[1] = "Rafael Silva";
-
-		dataAnuncio[0] = Calendar.getInstance();
-		dataAnuncio[1] = Calendar.getInstance();
-		diaInicio[0] = 26;
-		mesInicio[0] = 8;
-		anoInicio[0] = 1996;
-
-		diaInicio[1] = 1;
-		mesInicio[1] = 2;
-		anoInicio[1] = 1998;
-
-		investDia[0] = 200;
-		investDia[1] = 400;
-
-		//relatorioPorCliente("adriano andrade");
-		//relatorioPorData(26, 05, 1995, 26, 05, 1998);
 		while (true) {
 			if (indiceAnuncios < 1) {
 				System.out.println(
@@ -213,28 +211,24 @@ public class capgeminiDESAFIO_2 {
 		}
 	}
 
-	public static void relatorioPorData(int _startDia, int _startMes, int _startAno, int _endDia, int _endMes,
-			int _endAno) {
+	public static void relatorioPorData(int _startDia, int _startMes, int _startAno, int _endDia, int _endMes,int _endAno) {
 
 		DateTime dataInicialJoda = new DateTime(_startAno, _startMes, _startDia, 0, 0);
 		DateTime dataFinalJoda = new DateTime(_endAno, _endMes, _endDia, 0, 0);
 
-		System.out.println("\nBusca entre: " + _startDia + "/" + _startMes + "/" + _startAno + " e " + _endDia + "/"
-				+ _endMes + "/" + _endAno);
+		System.out.println("\nBusca entre: " + _startDia + "/" + _startMes + "/" + _startAno + " e " + _endDia + "/" + _endMes + "/" + _endAno);
 		try {
-			System.out.println(
-					"--------------------------------------------------------------------------------------------");
+			System.out.println("--------------------------------------------------------------------------------------------");
 			for (int i = 0; i < indiceAnuncios; i++) {
 				DateTime dataAnuncio = new DateTime(anoInicio[i], mesInicio[i], diaInicio[i], 0, 0);
+				
 				if (dataAnuncio.isAfter(dataInicialJoda) && dataAnuncio.isBefore(dataFinalJoda)) {
-					System.out.print("Anuncio: " + nomeAnuncio[i] + " || Cliente: " + nomeCliente[i] + " || Data: "
-							+ diaInicio[i] + "/" + mesInicio[i] + "/" + anoInicio[i] + " || Valor Investido: "
-							+ investDia[i]);
+					System.out.print("Anuncio: " + nomeAnuncio[i] + " || Cliente: " + nomeCliente[i] + " || Data: "+ diaInicio[i] 
+							+ "/" + mesInicio[i] + "/" + anoInicio[i] + " || Valor Investido: "+ investDia[i]);
 
 					calculadoraAlcance(investDia[i], i);
 
-					System.out.println(
-							"\n--------------------------------------------------------------------------------------------");
+					System.out.println("\n--------------------------------------------------------------------------------------------");
 				} else {
 					System.out.println("Falso");
 				}
