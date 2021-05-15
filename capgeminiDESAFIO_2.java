@@ -41,29 +41,10 @@ public class capgeminiDESAFIO_2 {
 	public static Calendar[] dataAnuncio = new Calendar[999];
 
 	public static void main(String[] args) {
-		// calculadoraAlcance();
 		Scanner dadosIniciais = new Scanner(System.in);
 		Scanner relatorio = new Scanner(System.in);
 		Scanner nome = new Scanner(System.in);
 
-//		nomeAnuncio[0] = "Anuncio 01";
-//		nomeAnuncio[1] = "Anuncio 02";
-//
-//		nomeCliente[0] = "Adriano Andrade";
-//		nomeCliente[1] = "Rafael Silva";
-//
-//		dataAnuncio[0] = Calendar.getInstance();
-//		dataAnuncio[1] = Calendar.getInstance();
-//		diaInicio[0] = 26;
-//		mesInicio[0] = 8;
-//		anoInicio[0] = 1996;
-//
-//		diaInicio[1] = 1;
-//		mesInicio[1] = 2;
-//		anoInicio[1] = 1998;
-//
-//		investDia[0] = 200;
-//		investDia[1] = 400;
 
 		while (true) {
 			if (indiceAnuncios < 1) {
@@ -145,13 +126,6 @@ public class capgeminiDESAFIO_2 {
 		System.out.println("Maximo de Views: ~" + qntMaximaViews[_indice]);
 		System.out.println("Maximo de Clicks: ~" + String.format("%.2f", qntMaximaClicks[_indice]) + "");
 		System.out.println("Maximo de Compartilhamentos: ~"+qntMaximaShares[_indice]);
-		
-//		System.out.println("\nValores aproximados");
-//		System.out.println("Valor: ~" + valor);
-//		System.out.println("Views: ~" + views);
-//		System.out.println("Clicks: ~ " + String.format("%.2f", clicks) + "");
-//		System.out.println("Share: ~" + share);
-//		System.out.println("View Shares: ~" + viewShares);
 	}
 
 	public static void cadastroAnuncio() {
